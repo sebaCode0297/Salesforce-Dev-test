@@ -1,0 +1,21 @@
+<apex:page controller="EnviarCorreoTareaController">
+    <apex:form >
+        <apex:pageBlock title="Enviar Correo Electrónico">
+            <apex:pageMessages />
+
+            <apex:pageBlockSection >
+                <apex:inputHidden value="{!tareaId}" />
+                <apex:outputLabel value="Asunto" for="asunto" />
+                <apex:inputText id="asunto" value="{!asunto}" required="true" />
+                <apex:outputLabel value="Destinatario" for="destinatario" />
+                <apex:inputText id="destinatario" value="{!destinatario}" required="true" />
+                <apex:outputLabel value="Cuerpo del Correo" for="cuerpoCorreo" />
+                <apex:inputTextarea id="cuerpoCorreo" value="{!cuerpoCorreo}" required="true" />
+            </apex:pageBlockSection>
+
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!enviarCorreo}" value="Enviar" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
